@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ascii-art/helpers"
+	"color/helpers"
 	"bufio"
 	"fmt"
 	"log"
