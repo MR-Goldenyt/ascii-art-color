@@ -8,7 +8,7 @@ import (
 // into ["Hello", "", "World"]
 func SplitSegments(s string) []string {
 
-	if strings.ContainsAny(s, "\\\n") == false {
+	if !strings.ContainsAny(s, "\\\n"){
 		return strings.Split(s, "\\n")
 	}
 	arr := []string{}
