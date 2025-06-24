@@ -1,53 +1,90 @@
-# ascii-art-color
+# 🎨 ascii-art-color
 
-## 🎯 Description
+## 💡 Description
 
-`ascii-art-color` is a CLI tool in Go that prints colored ASCII art using a banner (`standard.txt`).  
-You can color either the **whole string** or a specific **substring** using a `--color=<color>` flag.
+`ascii-art-color` is a CLI tool written in Go that prints **ASCII art** from a `standard.txt` font file, with support for **coloring** specific substrings or the entire string using a `--color=<color>` flag.
 
 ---
 
 ## 🚀 Usage
 
 ```bash
-go run . --color=<color> <substring> "Your text here"
+go run . --color=<color> [substring] "your string here"
 ```
 
-### Examples
-
-```bash
-go run . --color=red kit "a king kitten has a kit"
-```
-
-⟶ This will print the ASCII art and color every `kit` in red.
-
-```bash
-go run . --color=cyan "hello world"
-```
-
-⟶ This colors the whole string if no substring is provided.
+- If you provide a substring, only matching parts will be colored.
+- If no substring is provided, the entire string will be colored.
 
 ---
 
-## 🎨 Supported Colors
+## ✨ Examples
 
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
+```bash
+go run . --color=red "hello world"
+```
+⟶ Colors the entire ASCII output in **red**.
+
+```bash
+go run . --color=orange kit "a king kitten has a kit"
+```
+⟶ Colors every occurrence of the substring `kit` in **orange** only.
+
+```bash
+go run . --color=underline "important"
+```
+⟶ Applies the underline style to the entire string.
+
+---
+
+## 🎨 Supported Colors & Styles
+
+### 🎨 Colors Table
+
+| Basic Colors  | Light Colors    | Bright Colors    | Extended Colors |
+|---------------|------------------|-------------------|-----------------|
+| `black`       | `lightred`       | `brightblack`     | `orange`        |
+| `red`         | `lightgreen`     | `brightred`       | `purple`        |
+| `green`       | `lightyellow`    | `brightgreen`     | `pink`          |
+| `yellow`      | `lightblue`      | `brightyellow`    | `gray`          |
+| `blue`        | `lightmagenta`   | `brightblue`      |                 |
+| `magenta`     | `lightcyan`      | `brightmagenta`   |                 |
+| `cyan`        | `lightwhite`     | `brightcyan`      |                 |
+| `white`       |                  | `brightwhite`     |                 |
+
+### ✏️ Text Styles
+
+| Style            | Description             |
+|------------------|-------------------------|
+| `bold`           | Bold text               |
+| `dim`            | Dim/faint text          |
+| `italic`         | Italic text             |
+| `underline`      | Underlined text         |
+| `blink`          | Blinking text           |
+| `reverse`        | Reverse video effect    |
+| `hidden`         | Hidden text             |
+| `strikethrough`  | Strike-through text     |
+
+### 🧼 Style Reset Flags
+
+| Flag               | Effect                |
+|--------------------|-----------------------|
+| `reset`            | Reset all styles      |
+| `nobold`           | Cancel bold           |
+| `noitalic`         | Cancel italic         |
+| `nounderline`      | Cancel underline      |
+| `noblink`          | Cancel blinking       |
+| `noreverse`        | Cancel reverse effect |
+| `nohidden`         | Cancel hidden         |
+| `nostrikethrough`  | Cancel strike         |
 
 ---
 
 ## ⚠️ Invalid Usage
 
-If the command is written incorrectly, this message will be shown:
+If the usage is incorrect, the program shows:
 
 ```bash
-Usage: go run . --color=<color> <substring> "something"
+Usage: go run . --color=<color> [substring] "something"
 ```
 
 ---
@@ -60,7 +97,7 @@ Usage: go run . --color=<color> <substring> "something"
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 ascii-art-color/
@@ -70,3 +107,10 @@ ascii-art-color/
 │   ├── color.go
 │   └── SplitSegments.go
 ```
+
+---
+
+## ✅ Notes
+
+- Only standard Go packages are used (no external libraries).
+- The project is fully compatible with ANSI terminals.

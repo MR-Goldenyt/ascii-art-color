@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	if len(os.Args) <= 3 && len(os.Args) >= 4 {
+	if !(len(os.Args) >= 3 && len(os.Args) <= 4) {
 		fmt.Println("Usage: ascii-art \"Your text here (use \\n for a vertical break)\"")
-		os.Exit(1)
+		return
 	}
 	color := os.Args[1]
 	if strings.HasPrefix(color, "--color=") {
