@@ -103,6 +103,8 @@ Usage: go run . --color=<color> [substring] "something"
 ascii-art-color/
 ├── main.go
 ├── standard.txt
+├── test.sh
+├── README.md
 ├── helpers/
 │   ├── color.go
 │   └── SplitSegments.go
