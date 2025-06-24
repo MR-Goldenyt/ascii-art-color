@@ -15,6 +15,8 @@ go run . --color=<color> [substring] "your string here"
 - If you provide a substring, only matching parts will be colored.
 - If no substring is provided, the entire string will be colored.
 
+
+
 ---
 
 ## ✨ Examples
@@ -76,6 +78,56 @@ go run . --color=underline "important"
 | `noreverse`        | Cancel reverse effect |
 | `nohidden`         | Cancel hidden         |
 | `nostrikethrough`  | Cancel strike         |
+
+🧱 Extra Color Categories
+
+🎨 foreground + background (fgbk)
+
+| Color Combo       | Code Example Usage             |
+| ----------------- | ------------------------------ |
+| `redfgbk`         | Red text with red background   |
+| `orangefgbk`      | Orange foreground + background |
+| `lightcyanfgbk`   | Light cyan both fg & bg        |
+| `brightwhitefgbk` | Bright white both fg & bg      |
+| `grayfgbk`        | Gray both fg & bg              |
+
+
+🎨 Foreground Variants (fg)
+
+| Foreground Color |
+| ---------------- |
+| `redfg`          |
+| `bluefg`         |
+| `orangefg`       |
+| `purplefg`       |
+| `pinkfg`         |
+| `grayfg`         |
+| `lightredfg`     |
+| `brightyellowfg` |
+
+🎨 Background Variants (bg)
+
+| Background Color |
+| ---------------- |
+| `redbg`          |
+| `bluebg`         |
+| `orangebg`       |
+| `purplebg`       |
+| `pinkbg`         |
+| `graybg`         |
+| `lightgreenbg`   |
+| `brightcyanbg`   |
+
+🖼️ Extra Reset/Cancel Styles
+
+| Reset Flag | Description           |
+| ---------- | --------------------- |
+| `normal`   | Reset to normal style |
+| `nobright` | Cancel bold/bright    |
+| `nofaint`  | Cancel dim/faint      |
+
+
+
 
 ---
 
