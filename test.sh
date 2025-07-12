@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 echo "🧪 Testing all cases for ascii-art-color project..."
 echo "======================================================"
@@ -85,38 +85,38 @@ run_test "Bright Cyan FG & BG" 'go run . --color=brightcyanfgbk "Bright Cyan Ful
 
 !/bin/bash
 
-# echo "🌈 FULL COLOR TESTING SCRIPT"
-# echo "======================================================"
+echo "🌈 FULL COLOR TESTING SCRIPT"
+echo "======================================================"
 
-# run_test() {
-#     echo -e "\n🔹 Test: $1"
-#     echo "Command: $2"
-#     eval $2
-#     echo "------------------------------------------------------"
-# }
+run_test() {
+    echo -e "\n🔹 Test: $1"
+    echo "Command: $2"
+    eval $2
+    echo "------------------------------------------------------"
+}
 
-# colors=(
-# black red green yellow blue magenta cyan white
-# orange purple pink gray
-# lightred lightgreen lightyellow lightblue lightmagenta lightcyan lightwhite
-# brightblack brightred brightgreen brightyellow brightblue brightmagenta brightcyan brightwhite
-# bold underline italic blink reverse strikethrough dim hidden
-# reset bright faint normal noitalic nobold nounderline noblink noreverse nohidden nostrikethrough nobright nofaint
-# blackbk redbk greenbk yellowbk bluebk magentabk cyanbk whitebk
-# orangebk purplebk pinkbk graybk lightredbk lightgreenbk lightyellowbk lightbluebk lightmagentabk lightcyanbk lightwhitebk
-# brightblackbk brightredbk brightgreenbk brightyellowbk brightbluebk brightmagentabk brightcyanbk brightwhitebk
-# blackfg redfg greenfg yellowfg bluefg magentafg cyanfg whitefg
-# orangefg purplefg pinkfg grayfg lightredfg lightgreenfg lightyellowfg lightbluefg lightmagentafg lightcyanfg lightwhitefg
-# brightblackfg brightredfg brightgreenfg brightyellowfg brightbluefg brightmagentafg brightcyanfg brightwhitefg
-# blackbg redbg greenbg yellowbg bluebg magentabg cyanbg whitebg
-# orangebg purplebg pinkbg graybg lightredbg lightgreenbg lightyellowbg lightbluebg lightmagentabg lightcyanbg lightwhitebg
-# brightblackbg brightredbg brightgreenbg brightyellowbg brightbluebg brightmagentabg brightcyanbg brightwhitebg
-# blackfgbk redfgbk greenfgbk yellowfgbk bluefgbk magentafgbk cyanfgbk whitefgbk
-# orangefgbk purplefgbk pinkfgbk grayfgbk lightredfgbk lightgreenfgbk lightyellowfgbk lightbluefgbk lightmagentafgbk lightcyanfgbk lightwhitefgbk
-# brightblackfgbk brightredfgbk brightgreenfgbk brightyellowfgbk brightbluefgbk brightmagentafgbk brightcyanfgbk brightwhitefgbk
-# blackfgbg redfgbk greenfgbk yellowfgbk
-# )
+colors=(
+black red green yellow blue magenta cyan white
+orange purple pink gray
+lightred lightgreen lightyellow lightblue lightmagenta lightcyan lightwhite
+brightblack brightred brightgreen brightyellow brightblue brightmagenta brightcyan brightwhite
+bold underline italic blink reverse strikethrough dim hidden
+reset bright faint normal noitalic nobold nounderline noblink noreverse nohidden nostrikethrough nobright nofaint
+blackbk redbk greenbk yellowbk bluebk magentabk cyanbk whitebk
+orangebk purplebk pinkbk graybk lightredbk lightgreenbk lightyellowbk lightbluebk lightmagentabk lightcyanbk lightwhitebk
+brightblackbk brightredbk brightgreenbk brightyellowbk brightbluebk brightmagentabk brightcyanbk brightwhitebk
+blackfg redfg greenfg yellowfg bluefg magentafg cyanfg whitefg
+orangefg purplefg pinkfg grayfg lightredfg lightgreenfg lightyellowfg lightbluefg lightmagentafg lightcyanfg lightwhitefg
+brightblackfg brightredfg brightgreenfg brightyellowfg brightbluefg brightmagentafg brightcyanfg brightwhitefg
+blackbg redbg greenbg yellowbg bluebg magentabg cyanbg whitebg
+orangebg purplebg pinkbg graybg lightredbg lightgreenbg lightyellowbg lightbluebg lightmagentabg lightcyanbg lightwhitebg
+brightblackbg brightredbg brightgreenbg brightyellowbg brightbluebg brightmagentabg brightcyanbg brightwhitebg
+blackfgbk redfgbk greenfgbk yellowfgbk bluefgbk magentafgbk cyanfgbk whitefgbk
+orangefgbk purplefgbk pinkfgbk grayfgbk lightredfgbk lightgreenfgbk lightyellowfgbk lightbluefgbk lightmagentafgbk lightcyanfgbk lightwhitefgbk
+brightblackfgbk brightredfgbk brightgreenfgbk brightyellowfgbk brightbluefgbk brightmagentafgbk brightcyanfgbk brightwhitefgbk
+blackfgbg redfgbk greenfgbk yellowfgbk
+)
 
-# for color in "${colors[@]}"; do
-#     run_test "$color" "go run . --color=$color \"$color\""
-# done
+for color in "${colors[@]}"; do
+    run_test "$color" "go run . --color=$color \"$color\""
+done

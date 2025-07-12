@@ -85,7 +85,6 @@ var ColorCodes = map[string]string{
 	"magentafg": "\033[35m",
 	"cyanfg":  "\033[36m",
 	"whitefg": "\033[37m",
-
 	"orangefg": "\033[38;5;208m",
 	"purplefg": "\033[38;5;129m",
 	"pinkfg":  "\033[38;5;213m",

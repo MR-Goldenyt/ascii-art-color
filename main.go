@@ -88,24 +88,23 @@ func main() {
 	i := 0
 	for i < len(segments) {
 		if seg := segments[i]; seg != "" {
-			// Render 8-line banner
 			for row := 0; row < 8; row++ {
 				var parts []string
-				for _, r := range seg {
+				for pos := 0; pos < len(seg); pos++ {
+					r := seg[pos]
 					idx := int(r) - 32
-					if target == "" {
-						colored := colorCode + fontLines[idx*9+(row+1)] + reset
-						parts = append(parts, colored)
-					} else {
-						if strings.ContainsAny(target, string(r)) {
-							colored := colorCode + fontLines[idx*9+(row+1)] + reset
-							parts = append(parts, colored)
-						} else {
-							colored := fontLines[idx*9+(row+1)]
+
+					if target != "" && len(seg)-pos >= len(target) && seg[pos:pos+len(target)] == target {
+						for j := 0; j < len(target); j++ {
+							ri := int(seg[pos+j]) - 32
+							colored := colorCode + fontLines[ri*9+(row+1)] + reset
 							parts = append(parts, colored)
 						}
+						pos += len(target) - 1 
+					} else {
+						colored := fontLines[idx*9+(row+1)]
+						parts = append(parts, colored)
 					}
-
 				}
 				fmt.Println(strings.Join(parts, ""))
 			}
