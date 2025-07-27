@@ -101,8 +101,11 @@ func main() {
 							parts = append(parts, colored)
 						}
 						pos += len(target) - 1 
-					} else {
-						colored := fontLines[idx*9+(row+1)]
+					} else if target == "" {
+						colored := colorCode + fontLines[idx*9+(row+1)] +"\033[0m"
+						parts = append(parts, colored)
+					}else {
+						colored :=  fontLines[idx*9+(row+1)] 
 						parts = append(parts, colored)
 					}
 				}
