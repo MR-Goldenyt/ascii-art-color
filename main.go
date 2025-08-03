@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"color/helpers"
 )
@@ -32,6 +33,29 @@ func main() {
 		colorCode := ""
 		helpers.RenderArt(segments, target, colorCode, fontLines)
 
+	} else if argsLength == 2 {
+		target := ""
+		colorCode := ""
+		found := false
+		var segments []string
+		var fontLines []string
+		for _, arg := range os.Args[1:] { // skip program name
+			if strings.HasPrefix(arg, "--color=") {
+				found = true
+				colorCode = strings.TrimPrefix(arg, "--color=")
+				colorCode = helpers.GetColorCode(colorCode)
+				break
+			}
+		}
+		if found {
+			segments = helpers.SplitSegments(os.Args[2])
+			fontLines = helpers.LoadBanner("standard")
+		}
+		helpers.RenderArt(segments, target, colorCode, fontLines)
+
+		if !found {
+			fmt.Println("No --color= argument found.")
+		}
 	}
 	// 	color := os.Args[1]
 	// 	if strings.HasPrefix(color, "--color=") {
