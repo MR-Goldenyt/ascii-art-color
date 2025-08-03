@@ -7,7 +7,7 @@ import (
 // splitSegments chops a string like "Hello\nWorld"
 // into ["Hello", "", "World"]
 func SplitSegments(s string) []string {
-
-	return strings.Split(s, "\\n")
+	s = strings.ReplaceAll(s, `\n`, "\n")
+	return strings.Split(s, "\n")
 
 }
