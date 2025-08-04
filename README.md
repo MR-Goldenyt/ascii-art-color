@@ -145,7 +145,7 @@ Usage: go run . --color=<color> [substring] "something"
 
 - 👑 **HUSSAIN ALI** – Team Leader [`@hussainali7`](https://learn.reboot01.com/git/hussainali7)
 - 🛠️ **Ahmed Alsafseef** – Developer [`@aalsafse`](https://learn.reboot01.com/git/aalsafse)
-- 🧩 **Abdulla Ashoor** – Developer [`@abashoor`](https://learn.reboot01.com/git/abashoor)
+- 🧩 **Yousif Muhammad** – Developer [`@ymuhamma`](https://learn.reboot01.com/git/ymuhamma)
 
 ---
 
