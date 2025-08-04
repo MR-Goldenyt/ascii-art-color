@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"color/helpers"
+	"ascii-art-color/helpers"
 )
 
 func main() {
